@@ -42,7 +42,6 @@ export default class Liste extends React.Component {
       console.log('We are here');
       this.setState({
         liste: responseJson,
-        isLoading: false,
       })
     })
     .catch(error => console.log(error)) //to catch the errors if any
@@ -50,16 +49,8 @@ export default class Liste extends React.Component {
 
   
   
-  render() {
-    if(this.state.isLoading){
-      return(
-          <View style={styles.loading}>
-              <ActivityIndicator/>
-          </View>
-      )
-  }
-  
-    return (
+  render() { 
+   return (
       <View style={styles.container}>
         <FlatList 
           style={styles.list}
